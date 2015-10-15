@@ -41,8 +41,6 @@ $(function () {
                 if (dataClass == 'skills')
                 {
                     // Might want to add animation here for sub-contents
-                    // My changes belongs here...
-                    // My changes belongs here...
                 }
             }
             else
