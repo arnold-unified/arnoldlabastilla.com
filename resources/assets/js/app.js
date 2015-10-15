@@ -20,6 +20,11 @@ router.map({
     '/skills': {
         component: require('./views/skills/skills'),
         subRoutes: {
+            '/chart': {
+                component: {
+                    template: require('./views/skills/chart.html')
+                }
+            },
             '/frameworks-markups-styles': {
                 component: {
                     template: require('./views/skills/frameworks-markups-styles.html')
@@ -51,7 +56,7 @@ router.map({
 });
 
 router.redirect({
-    '/skills': '/skills/frameworks-markups-styles'
+    '/skills': '/skills/chart'
 });
 
 router.start(App, '#app');

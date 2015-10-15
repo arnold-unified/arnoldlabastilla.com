@@ -5,12 +5,15 @@
 <hr class="hr-modified"/>
 
 <div class="animated-body skills">
-    <ul class="breadcrumb">
+    <ul class="nav nav-pills">
+        <li><a v-link="{ path: '/skills/chart' }" class="vue-nav vue-sub-nav" data-class="skills">Chart</a></li>
         <li><a v-link="{ path: '/skills/frameworks-markups-styles' }" class="vue-nav vue-sub-nav" data-class="skills">Frameworks</a></li>
         <li><a v-link="{ path: '/skills/ide-tools-applications' }" class="vue-nav vue-sub-nav" data-class="skills">Applications</a></li>
         <li><a v-link="{ path: '/skills/databases' }" class="vue-nav vue-sub-nav" data-class="skills">Databases</a></li>
         <li><a v-link="{ path: '/skills/repositories' }" class="vue-nav vue-sub-nav" data-class="skills">Repositories</a></li>
     </ul>
 
-    <router-view></router-view>
+    <div id="vue-sub-content">
+        <router-view></router-view>
+    </div>
 </div>
