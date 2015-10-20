@@ -29,7 +29,7 @@ $(function () {
         function()
         {
             // Select the desired main nav and make it active
-            // Used on both vue-nav ang vue-sub-nav
+            // Used on both vue-nav and vue-sub-nav
             var dataClass = $(this).data('class');
             var parentA = $('#' + dataClass);
             parentA.addClass('v-link-active-exact');
@@ -52,25 +52,51 @@ $(function () {
         }
     );
 
-    // Skills content animation
-    $('#vue-content').on('mouseenter', '.img-container',
+    // Image content animation
+    $('.vue-content').on('mouseenter', '.thumbnail',
         function()
         {
             var spanAnimationClass = 'animated fadeInDown';
-            $(this).parent('.col-md-2').find('span').css({ opacity: 1 }).addClass(spanAnimationClass).one(animationEnd, function() {
+            $(this).parents('.parent-thumbnail').find('span, h4').css({ opacity: 1 }).addClass(spanAnimationClass).one(animationEnd, function() {
                 $(this).removeClass(spanAnimationClass);
             });
+
+            // Projects Section -- show overlay
+            $(this).parents('.parent-thumbnail').find('.thumbnail-overlay').css({ opacity: 1 });
         }
     )
-        .on('mouseleave', '.img-container',
+        .on('mouseleave', '.thumbnail',
             function()
             {
                 var spanAnimationClass = 'animated fadeOutUp';
-                $(this).parent('.col-md-2').find('span').addClass(spanAnimationClass).one(animationEnd, function() {
+                $(this).parents('.parent-thumbnail').find('span, h4').addClass(spanAnimationClass).one(animationEnd, function() {
                     $(this).removeClass(spanAnimationClass).css({ opacity: 0 });
                 });
+
+                // Projects Section -- show overlay
+                $(this).parents('.parent-thumbnail').find('.thumbnail-overlay').css({ opacity: 0 });
             }
     );
+
+    // Flat popover
+    var popoverTemplate = '<div class="popover">' +
+        '<div class="arrow"></div>' +
+        '<div class="popover-content"></div>' +
+        '</div>';
+
+    var popoverSettings = {
+        trigger: 'hover',
+        placement: 'top',
+        selector: '.vue-nav',
+        content: function () {
+            var pop_content = $(this).parents('li').find('.flat-popover-content');
+            console.log(pop_content);
+            return pop_content.html();
+        },
+        template: popoverTemplate,
+        html: true
+    };
+    $('.vue-content').popover(popoverSettings);
 });
 
 function resetActiveNav()
@@ -127,14 +153,19 @@ function animateContents()
             var hrAnimationClass = 'animated fadeInRight';
             hr.addClass(hrAnimationClass).one(animationEnd, function() {
                 $(this).removeClass(hrAnimationClass);
-
-                body.css({ opacity: 1 });
-                var bodyAnimationClass = 'animated fadeIn';
-                body.addClass(bodyAnimationClass).one(animationEnd, function() {
-                    $(this).removeClass(bodyAnimationClass);
-                });
             });
         }, 300
+    );
+
+    setTimeout(
+        function()
+        {
+            body.css({ opacity: 1 });
+            var bodyAnimationClass = 'animated fadeIn';
+            body.addClass(bodyAnimationClass).one(animationEnd, function() {
+                $(this).removeClass(bodyAnimationClass);
+            });
+        }, 1000
     );
 
     var tagline1 = $('.tagline1');

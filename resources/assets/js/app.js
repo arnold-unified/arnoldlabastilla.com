@@ -25,14 +25,14 @@ router.map({
                     template: require('./views/skills/chart.html')
                 }
             },
-            '/frameworks-markups-styles': {
+            '/frameworks-languages-markups-styles': {
                 component: {
-                    template: require('./views/skills/frameworks-markups-styles.html')
+                    template: require('./views/skills/frameworks.html')
                 }
             },
-            '/ide-tools-applications': {
+            '/applications-ide-tools': {
                 component: {
-                    template: require('./views/skills/ide-tools-applications.html')
+                    template: require('./views/skills/applications.html')
                 }
             },
             '/databases': {

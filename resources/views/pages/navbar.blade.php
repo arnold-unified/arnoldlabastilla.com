@@ -7,8 +7,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/logo.png') }}" width="100" alt="Arnold Labastilla Logo"/>
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Arnold Labastilla Logo"/>
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
