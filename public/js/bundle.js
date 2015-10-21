@@ -12827,7 +12827,7 @@ module.exports = {
 };
 
 },{"./404.html":102}],104:[function(require,module,exports){
-module.exports = '<div class="animated-title"><h2>About</h2></div>\n\n<hr class="hr-modified"/>\n\n<div class="animated-body about">\n    <div class="vue-sub-content">\n        <p>\n            I\'m a Web Developer. I create competitive, stunning websites and analyze web systems based on your requirements.\n            I modify, redesign (layout/codes/database), and beautify websites passionately with the use of my skills.\n            I let my hands get dirty on coding, specifically on backend side. Also, a good problem solver.\n        </p>\n\n        <p>I\'m a happy, curious, and motivated person.</p>\n\n        <p>View my <a href="http://docs.google.com/viewer?url=http%3A%2F%2Flocal.arnoldlabastilla.com%2Fresume%2FArnoldLabastillaResume.docx" target="awindow">google resume</a>.</p>\n    </div>\n</div>';
+module.exports = '<div class="animated-title"><h2>About</h2></div>\n\n<hr class="hr-modified"/>\n\n<div class="animated-body about">\n    <div class="vue-sub-content">\n        <p>\n            I\'m a Web Developer. I create websites and analyze web systems based on your requirements.\n            I modify, redesign (layout/codes/database), and beautify websites passionately with the use of my skills.\n            I let my hands get dirty on coding, specifically on backend side. Also, a good problem solver.\n        </p>\n\n        <p>I\'m a happy, curious, and motivated person.</p>\n\n        <p>View <a href="/resume/ArnoldLabastillaResume.pdf" target="awindow">my resume</a>.</p>\n    </div>\n</div>';
 },{}],105:[function(require,module,exports){
 'use strict';
 
@@ -12845,7 +12845,7 @@ module.exports = {
 };
 
 },{"./contact.html":106}],108:[function(require,module,exports){
-module.exports = '<div class="tagline">\n    <h1><span class="tagline1">IF YOU</span> <span class="tagline2 love">LOVE</span> <span class="tagline3">IT</span><br/>\n        <span class="tagline4 create">{CR<span class="eat">EAT</span>E}</span> <span class="tagline5">IT</span></h1>\n</div>\n\n<div class="description">\n    <p>I am <strong>Arnold Labastilla</strong>, WEB DEVELOPER.\n        I create competitive, stunning websites and analyze web systems based on your requirements.\n    </p>\n</div>';
+module.exports = '<div class="tagline">\n    <h1><span class="tagline1">IF YOU</span> <span class="tagline2 love">LOVE</span> <span class="tagline3">IT</span><br/>\n        <span class="tagline4 create">{CR<span class="eat">EAT</span>E}</span> <span class="tagline5">IT</span></h1>\n</div>\n\n<div class="description">\n    <p>I am <strong>Arnold Labastilla</strong>, WEB DEVELOPER.\n        I create websites and analyze web systems based on your requirements.\n    </p>\n</div>';
 },{}],109:[function(require,module,exports){
 'use strict';
 

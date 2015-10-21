@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('images/logo.png') }}" alt="Arnold Labastilla Logo"/>
+                <img src="{{ asset('images/logo.png') }}" class="img-responsive" alt="Arnold Labastilla Logo"/>
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
