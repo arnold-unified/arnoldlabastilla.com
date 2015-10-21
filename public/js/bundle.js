@@ -12767,7 +12767,7 @@ router.map({
     '*': {
         component: require('./views/404/404')
     },
-    '/': {
+    '/home': {
         component: require('./views/home/home')
     },
     '/about': {
@@ -12812,7 +12812,8 @@ router.map({
 });
 
 router.redirect({
-    '/skills': '/skills/chart'
+    '/skills': '/skills/chart',
+    '/': '/home'
 });
 
 router.start(App, '#app');

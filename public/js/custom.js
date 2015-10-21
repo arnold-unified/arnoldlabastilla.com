@@ -1,4 +1,4 @@
-var activeA = $('.ul-nav-animation li a.v-link-active-exact');
+var activeA = $('.ul-nav-animation li a.v-link-active');
 var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
 $(function () {
@@ -32,7 +32,7 @@ $(function () {
             // Used on both vue-nav and vue-sub-nav
             var dataClass = $(this).data('class');
             var parentA = $('#' + dataClass);
-            parentA.addClass('v-link-active-exact');
+            parentA.addClass('v-link-active');
             activeA = parentA;
 
             // If sub class link is active
@@ -53,7 +53,8 @@ $(function () {
     );
 
     // Image content animation
-    $('.vue-content').on('mouseenter', '.thumbnail',
+    var vue_content = $('.vue-content');
+    vue_content.bind('mouseenter').on('mouseenter', '.thumbnail',
         function()
         {
             var spanAnimationClass = 'animated fadeInDown';
@@ -96,18 +97,18 @@ $(function () {
         template: popoverTemplate,
         html: true
     };
-    $('.vue-content').popover(popoverSettings);
+    vue_content.popover(popoverSettings);
 });
 
 function resetActiveNav()
 {
     // If sub class link is active
-    if ($('.vue-sub-nav').hasClass('v-link-active-exact'))
+    if ($('.vue-sub-nav').hasClass('v-link-active'))
     {
-        var parentA = $('#' + $('.vue-sub-nav.v-link-active-exact').data('class'));
+        var parentA = $('#' + $('.vue-sub-nav.v-link-active').data('class'));
 
         activeA = parentA;
-        parentA.addClass('v-link-active-exact');
+        parentA.addClass('v-link-active');
     }
 
     var left = activeA.parent().position().left;
