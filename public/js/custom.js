@@ -7,7 +7,7 @@ $(function () {
 
     resetActiveNav();
 
-    // Nav slider
+    //region Nav slider
     $('.ul-nav-animation li a').hover(
         function()
         {
@@ -18,12 +18,13 @@ $(function () {
             slideNavs(activeA);
         }
     );
+    //endregion
 
     //Parallax
     var scene = document.getElementById('scene');
     var parallax = new Parallax(scene);
 
-    // Content animation
+    //region Content animation
     animateContents();
     $('#app').unbind('click').on('click', '.vue-nav',
         function()
@@ -40,9 +41,7 @@ $(function () {
             {
                 if (dataClass == 'skills')
                 {
-                    // Might want to add animation here for sub-contents
-                    // I am changed
-                    // I am another changed
+                    animateSubContents();
                 }
             }
             else
@@ -51,14 +50,15 @@ $(function () {
             }
         }
     );
+    //endregion
 
-    // Image content animation
+    //region Image content animation
     var vue_content = $('.vue-content');
     vue_content.bind('mouseenter').on('mouseenter', '.thumbnail',
         function()
         {
             var spanAnimationClass = 'animated fadeInDown';
-            $(this).parents('.parent-thumbnail').find('span, h4').css({ opacity: 1 }).addClass(spanAnimationClass).one(animationEnd, function() {
+            $(this).parents('.parent-thumbnail').find('span, h4, small').css({ opacity: 1 }).addClass(spanAnimationClass).one(animationEnd, function() {
                 $(this).removeClass(spanAnimationClass);
             });
 
@@ -70,7 +70,7 @@ $(function () {
             function()
             {
                 var spanAnimationClass = 'animated fadeOutUp';
-                $(this).parents('.parent-thumbnail').find('span, h4').addClass(spanAnimationClass).one(animationEnd, function() {
+                $(this).parents('.parent-thumbnail').find('span, h4, small').addClass(spanAnimationClass).one(animationEnd, function() {
                     $(this).removeClass(spanAnimationClass).css({ opacity: 0 });
                 });
 
@@ -78,8 +78,9 @@ $(function () {
                 $(this).parents('.parent-thumbnail').find('.thumbnail-overlay').css({ opacity: 0 });
             }
     );
+    //endregion
 
-    // Flat popover
+    //region Flat popover
     var popoverTemplate = '<div class="popover">' +
         '<div class="arrow"></div>' +
         '<div class="popover-content"></div>' +
@@ -98,6 +99,7 @@ $(function () {
         html: true
     };
     vue_content.popover(popoverSettings);
+    //endregion
 });
 
 function resetActiveNav()
@@ -241,5 +243,22 @@ function animateContents()
                 });
             });
         }, 1000
+    );
+}
+
+function animateSubContents()
+{
+    var vue_sub_content = $('.vue-sub-content');
+    vue_sub_content.css({ opacity: 0 });
+
+    setTimeout(
+        function ()
+        {
+            vue_sub_content.css({ opacity: 1 });
+            var titleAnimationClass = 'animated fadeIn';
+            vue_sub_content.addClass(titleAnimationClass).one(animationEnd, function() {
+                $(this).removeClass(titleAnimationClass);
+            });
+        }, 200
     );
 }
