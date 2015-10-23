@@ -92,7 +92,6 @@ $(function () {
         selector: '.vue-nav',
         content: function () {
             var pop_content = $(this).parents('li').find('.flat-popover-content');
-            console.log(pop_content);
             return pop_content.html();
         },
         template: popoverTemplate,
