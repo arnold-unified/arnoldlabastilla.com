@@ -105,13 +105,15 @@ a:hover {
 .vue-content .animated-title h2 {
     margin-top: 0;
 }
+.vue-content .projects .thumbnail,
 .vue-content .skills .thumbnail {
-    border-color: transparent;
+    border: 1px solid transparent;
     position: inherit;
     z-index: 1;
 }
+.vue-content .projects .thumbnail:hover,
 .vue-content .skills .thumbnail:hover {
-    border-color: #64A2E0;
+    cursor: pointer;
 }
 .vue-content .vue-sub-content span {
     margin-top: -10px;
@@ -122,14 +124,8 @@ a:hover {
 
 .vue-content .projects .col-xs-6,
 .vue-content .projects .col-md-6 {
-    padding: 5px;
+    padding: 0;
     margin-bottom: -20px;
-}
-
-.vue-content .about p,
-.vue-content .contact,
-.vue-content .contact p {
-    font-size: 18px;
 }
 
 .vue-sub-content {
@@ -142,13 +138,13 @@ a:hover {
 }
 .parent-thumbnail .thumbnail .thumbnail-overlay {
     position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
     z-index: 1;
     padding: 10px 8px 8px 8px;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
 
     -webkit-transition: 0.3s;
@@ -230,6 +226,12 @@ a:hover {
 }
 
 .hr-modified {
+    border: none;
+    height: 3px;
+    color: #64A2E0;
+    background-color: #64A2E0;
+}
+.hr-modified1 {
     border-top: 0;
     height: 1px;
     margin-top: 15px;
@@ -242,21 +244,19 @@ a:hover {
 }
 
 .nav .nav-pills {
-    border-radius: 0;
     margin-bottom: 5px;
 }
     .nav-pills>li>a {
-        border-radius: 0;
         color: #2E69A2;
 
         -webkit-transition: 0.3s;
         -moz-transition: 0.3s;
      }
-    .nav-pills>li>a.v-link-active-exact,
+    .nav-pills>li>a.v-link-active,
     .nav-pills>li>a:focus,
     .nav-pills>li>a:hover {
-        background-color: #F7F7F7;
-        color: #23527c;
+        background-color: #199ddf;
+        color: #FFFFFF;
     }
 
 .vue-sub-content {
@@ -277,10 +277,10 @@ a:hover {
     display: none;
 }
 .popover {
-    background-color: #199ddf;
-    color: #FFFFFF;
-    border-radius: 0;
-    border: none;
+    background-color: #F7F7F7;
+    color: #23527c;
+    /*border-radius: 0;*/
+    border-color: #C5C4C4;
     max-width: 300px;
     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.2);
@@ -288,7 +288,8 @@ a:hover {
     font-family: inherit;
 }
 .popover.top>.arrow:after {
-    border-top-color: #199ddf;
+    border-top-color: #F7F7F7;
+    border-bottom-color: #dddddd;
 }
 .popover-content {
     padding: 2px 5px;
