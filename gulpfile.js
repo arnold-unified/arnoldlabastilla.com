@@ -15,11 +15,15 @@ elixir(function(mix) {
     mix
         .styles([
             'bootstrap.min.css',
-            'animate.css'
+            'animate.css',
+            'font-awesome.min.css',
+            'custom.css'
         ], './public/css')
         .scripts([
+            'jquery-1.11.3.min.js',
             'bootstrap.min.js',
-            'parallax.min.js'
+            'parallax.min.js',
+            'custom.js'
         ], './public/js')
         .version(['css/all.css','js/all.js']);
 
