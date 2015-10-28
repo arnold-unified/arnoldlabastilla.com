@@ -63,7 +63,7 @@ ul.social li.google-plus {
 ul.social li.google-plus:hover {
     background-color: #af3b2d;
 }
-ul.social li.twitter {
+ul.social li.twitter {/*this is changed*/
     background-color: #55acee;
 }
 ul.social li.twitter:hover {
