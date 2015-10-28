@@ -1,5 +1,8 @@
 /vendor
 /node_modules
 /idea
+/public/build
+/public/js
+/public/css
 .env
 .idea
