@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Arnold Labastilla</title>
-    <meta name="keywords" content="Profile, Portfolio, Web, Website, Web Developer, Developer, PHP, Laravel, Laravel Developer, Backend Developer">
+    <meta name="keywords" content="Profile, Portfolio, Web Developer, PHP Developer, Laravel, Laravel Developer, Backend Developer">
     <meta
         name="description"
         content="I'm a Web Developer. I create competitive websites and analyze web systems based on your requirements. I modify, redesign (layout/codes/database), and beautify websites passionately with the use of my skills. I let my hands get dirty on coding, specifically on backend side. Also, a good problem solver."
     >
+    <meta name="author" content="admin">
 
     <!-- Icon Logo -->
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
