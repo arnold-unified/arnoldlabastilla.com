@@ -63,7 +63,7 @@ ul.social li.google-plus {
 ul.social li.google-plus:hover {
     background-color: #af3b2d;
 }
-ul.social li.twitter {/*this is changed*/
+ul.social li.twitter {
     background-color: #55acee;
 }
 ul.social li.twitter:hover {
@@ -275,9 +275,6 @@ a:hover {
     width: 80px;
     padding: 5px;
 }
-.navbar-brand>img {
-    /*width: 80px;*/
-}
 
 .flat-popover-content {
     display: none;
@@ -285,7 +282,6 @@ a:hover {
 .popover {
     background-color: #F7F7F7;
     color: #23527c;
-    /*border-radius: 0;*/
     border-color: #C5C4C4;
     max-width: 300px;
     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);

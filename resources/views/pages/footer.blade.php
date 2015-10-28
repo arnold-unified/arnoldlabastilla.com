@@ -13,7 +13,7 @@
                         <i class="fa fa-linkedin"></i></a></li>
                 <li class="twitter">
                     <a href="https://twitter.com/a_labastilla" target="_blank">
-                        <i class="fa fa-twitter"></i></a></li>{{--this is changed--}}
+                        <i class="fa fa-twitter"></i></a></li>
                 <li class="google-plus">
                     <a href="https://plus.google.com/u/0/110558063799729540810/posts" target="_blank">
                         <i class="fa fa-google-plus"></i></a></li>
