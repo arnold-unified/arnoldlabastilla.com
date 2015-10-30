@@ -1,13 +1,39 @@
+/**
+ * Set default active nav.
+ *
+ * @type {*|jQuery|HTMLElement}
+ */
 var activeA = $('.ul-nav-animation li a.v-link-active');
+
+/**
+ * Set animation end instance.
+ *
+ * @type {string}
+ */
 var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
+/**
+ * If 404 page is returned, set the default active nav to home.
+ */
+if (activeA.length === 0)
+{
+    activeA = $('#home');
+}
+
 $(function () {
-    // Initialize tooltip
+    /**
+     * Initialize tooltip
+     */
     $('[data-toggle=tooltip]').tooltip();
 
+    /**
+     * Resets active nav.
+     */
     resetActiveNav();
 
-    //region Nav slider
+    /**
+     * Manipulates nav slider.
+     */
     $('.ul-nav-animation li a').hover(
         function()
         {
@@ -18,25 +44,34 @@ $(function () {
             slideNavs(activeA);
         }
     );
-    //endregion
 
-    //Parallax
+    /**
+     * Parallax initialization.
+     *
+     * @type {HTMLElement}
+     */
     var scene = document.getElementById('scene');
     var parallax = new Parallax(scene);
 
-    //region Content animation
+    /**
+     * Triggers content animation on page load.
+     */
     animateContents();
+
+    /**
+     * Triggers content animation on click.
+     */
     $('#app').unbind('click').on('click', '.vue-nav',
         function()
         {
-            // Select the desired main nav and make it active
-            // Used on both vue-nav and vue-sub-nav
-            var dataClass = $(this).data('class');
-            var parentA = $('#' + dataClass);
-            parentA.addClass('v-link-active');
-            activeA = parentA;
+            /**
+             * Select the desired main nav and make it active.
+             * Note: Used on both vue-nav and vue-sub-nav.
+             *
+             * @type {*|jQuery}
+             */
+            var dataClass = triggerActiveNav($(this));
 
-            // If sub class link is active
             if ($(this).hasClass('vue-sub-nav'))
             {
                 if (dataClass == 'skills')
@@ -50,37 +85,31 @@ $(function () {
             }
         }
     );
-    //endregion
 
-    //region Image content animation
+    /**
+     * Initialize vue content.
+     * @type {*|jQuery|HTMLElement}
+     */
     var vue_content = $('.vue-content');
-    vue_content.bind('mouseenter').on('mouseenter', '.thumbnail',
-        function()
-        {
-            var spanAnimationClass = 'animated fadeInDown';
-            $(this).parents('.parent-thumbnail').find('span, h4, small').css({ opacity: 1 }).addClass(spanAnimationClass).one(animationEnd, function() {
-                $(this).removeClass(spanAnimationClass);
-            });
 
-            // Projects Section -- show overlay
-            $(this).parents('.parent-thumbnail').find('.thumbnail-overlay').css({ opacity: 1 });
-        }
-    )
-        .on('mouseleave', '.thumbnail',
-            function()
-            {
-                var spanAnimationClass = 'animated fadeOutUp';
-                $(this).parents('.parent-thumbnail').find('span, h4, small').addClass(spanAnimationClass).one(animationEnd, function() {
-                    $(this).removeClass(spanAnimationClass).css({ opacity: 0 });
-                });
+    /**
+     * Animate logos on skills section and images on projects section.
+     */
+    animateLogos(vue_content);
 
-                // Projects Section -- show overlay
-                $(this).parents('.parent-thumbnail').find('.thumbnail-overlay').css({ opacity: 0 });
-            }
-    );
-    //endregion
+    /**
+     * Initializes and triggers popover
+     */
+    initializePopover(vue_content);
+});
 
-    //region Flat popover
+/**
+ * Initializes popover.
+ *
+ * @param vue_content
+ */
+function initializePopover(vue_content)
+{
     var popoverTemplate = '<div class="popover">' +
         '<div class="arrow"></div>' +
         '<div class="popover-content"></div>' +
@@ -98,9 +127,59 @@ $(function () {
         html: true
     };
     vue_content.popover(popoverSettings);
-    //endregion
-});
+}
 
+/**
+ * Animate logos on skills section and images on projects section.
+ * @param vue_content
+ */
+function animateLogos(vue_content)
+{
+    vue_content.bind('mouseenter').on('mouseenter', '.thumbnail',
+        function()
+        {
+            var spanAnimationClass = 'animated fadeInDown';
+            $(this).parents('.parent-thumbnail').find('span, h4, small').css({ opacity: 1 }).addClass(spanAnimationClass).one(animationEnd, function() {
+                $(this).removeClass(spanAnimationClass);
+            });
+
+            // Projects Section -- show overlay
+            $(this).parents('.parent-thumbnail').find('.thumbnail-overlay').css({ opacity: 1 });
+        }
+    )
+        .on('mouseleave', '.thumbnail',
+        function()
+        {
+            var spanAnimationClass = 'animated fadeOutUp';
+            $(this).parents('.parent-thumbnail').find('span, h4, small').addClass(spanAnimationClass).one(animationEnd, function() {
+                $(this).removeClass(spanAnimationClass).css({ opacity: 0 });
+            });
+
+            // Projects Section -- show overlay
+            $(this).parents('.parent-thumbnail').find('.thumbnail-overlay').css({ opacity: 0 });
+        }
+    );
+}
+
+/**
+ * Triggers active nav.
+ *
+ * @param _this
+ * @returns {*}
+ */
+function triggerActiveNav(_this)
+{
+    var dataClass = _this.data('class');
+    var parentA = $('#' + dataClass);
+    parentA.addClass('v-link-active');
+    activeA = parentA;
+
+    return dataClass;
+}
+
+/**
+ * Resets active nav.
+ */
 function resetActiveNav()
 {
     // If sub class link is active
@@ -117,6 +196,11 @@ function resetActiveNav()
     $('#slider').css({'left' : left, 'width' : width});
 }
 
+/**
+ * Trigger slide navs.
+ *
+ * @param elem
+ */
 function slideNavs(elem)
 {
     var left = elem.parent().position().left;
@@ -128,6 +212,9 @@ function slideNavs(elem)
     });
 }
 
+/**
+ * Animate page contents.
+ */
 function animateContents()
 {
     var title = $('.animated-title');
@@ -245,6 +332,9 @@ function animateContents()
     );
 }
 
+/**
+ * Animate page sub contents.
+ */
 function animateSubContents()
 {
     var vue_sub_content = $('.vue-sub-content');

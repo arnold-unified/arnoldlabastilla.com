@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Arnold Labastilla</title>
+    <title>Portfolio | Arnold Labastilla</title>
     <meta name="keywords" content="Profile, Portfolio, Web Developer, PHP Developer, Laravel, Laravel Developer, Backend Developer">
     <meta
         name="description"

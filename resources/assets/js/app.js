@@ -52,6 +52,9 @@ router.map({
     },
     '/contact': {
         component: require('./views/contact/contact')
+    },
+    '/credits': {
+        component: require('./views/credits/credits')
     }
 });
 
